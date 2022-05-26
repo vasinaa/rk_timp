@@ -1,28 +1,28 @@
 #include <iostream>
 #include <random>
 
-struct tree {
+struct Tree {
   int ch=0;
-  struct tree *k = nullptr;
-  struct tree *left= nullptr;
-  struct tree *right= nullptr;
+  struct Tree *k = nullptr;
+  struct Tree *left= nullptr;
+  struct Tree *right= nullptr;
 };
 
-void Left (int ch, tree *pp)
+void Left (int ch, Tree *pp)
 {
-  pp->left =new tree;
+  pp->left =new Tree;
   pp->left->ch =ch;
   pp->left->k= pp;
 }
 
-void Right( int ch, tree *pp)
+void Right( int ch, Tree *pp)
 {
-  pp->right = new tree;
+  pp->right = new Tree;
   pp->right->ch=ch;
   pp->right->k=pp;
 }
 
-void show ( tree *pp, std::vector<int> &vec)
+void show ( Tree *pp, std::vector<int> &vec)
 {
   if (pp=0) return;
   show(pp->left,vec);

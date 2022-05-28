@@ -22,11 +22,11 @@ void Right( int ch, Tree *pp)
   pp->right->k=pp;
 }
 
-void show ( Tree *pp, std::vector<int> &vec)
+void show ( Tree *tree, std::vector<int> &vec)
 {
-  if (pp=0) return;
-  show(pp->left,vec);
-  show (pp->right,vec);
-  vec.push_back(pp->ch);
+  if (tree=nullptr) return;
+  show(tree->left,vec);
+  show (tree->right,vec);
+  vec.push_back(tree->ch);
 }
   

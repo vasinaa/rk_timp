@@ -4,36 +4,50 @@
 TEST( Tree, Empty){
   std::vector<int> vec_0 ={0};
   std::vector<int> vec;
-  Tree *pp = new Tree{};
+  Tree *tree = new Tree{};
   show(tree, vec);
   EXPECT_EQ(vec_0, vec);
 }
 
 TEST(Tree, element_right){
-  std::vector<int> vec_0 ={0,1}
+  std::vector<int> vec_0 ={0,1};
   std::vector<int> vec;
-  Tree *pp =new Tree{};
-  pushRight(1,tree);
+  Tree *tree =new Tree{};
+  Right(1,tree);
+  show(tree,vec);
+  EXPECT_EQ(vec_0, vec);
+}
+TEST(Tree, element_left){
+  std::vector<int> vec_0 ={0,1};
+  std::vector<int> vec;
+  Tree *tree =new Tree{};
+  Left(0,tree);
   show(tree,vec);
   EXPECT_EQ(vec_0, vec);
 }
 
+
+
 TEST (Tree ,FullTree){
   std::vector<int> vec;
-  std::vector<int> vec_0={4,12,2,5,9,14,3,7,10,15};
+  std::vector<int> vec_0={26,18,20,2,30,25,3,37,45,63,125};
   srandom(time(nullptr));
-  Tree *tree = new Tree{ 8,nullptr,nullptr};
+  Tree *tree = new Tree{ 26,nullptr,nullptr};
   
-  Left(4,tree);
-  Right(12,tree);
-  Left(2,tree);
-  Right(5,tree));
-  Left(9,tree));
-  Right(14,tree));
-  Left(3,tree);
-  Right(7,tree);
-  Left(10,tree);
-  Right(15,tree);
+  Left(18,tree);
+  Right(20,tree);
+  
+  Left(2,tree->right);
+  Right(30,tree->right);
+  
+  Left(25,tree->left);
+  Right(37,tree->left);
+  
+  Left(3,tree->left->right);
+  Right(45,tree->left->right);
+  
+  Left(63,tree->left->left);
+  Right(125,tree->left->left);
   
   show(tree,vec);
   EXPECT_EQ(vec_0,vec);

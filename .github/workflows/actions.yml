@@ -33,7 +33,7 @@ jobs:
       run: |
         ./test
         lcov -c -t "symmetrictree" -o lcov.info -d .
-        lcov --remove lcov.info '/home/runner/work/rk_limp/rk_timp/third-party/gtest/*' -o lcov.info
+        lcov --remove lcov.info '/home/runner/work/rk_timp/rk_timp/third-party/gtest/*' -o lcov.info
         lcov --remove lcov.info '/usr/include/*' -o lcov.info
         
     - name: CovBeg

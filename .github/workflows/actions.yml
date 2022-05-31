@@ -31,8 +31,8 @@ jobs:
       # Execute tests defined by the CMake configuration.  
       
       run: |
-        ./test
-        lcov -c -t "symmetrictree" -o lcov.info -d .
+        ./test1
+        lcov -c -t "main" -o lcov.info -d .
         lcov --remove lcov.info '/home/runner/work/rk_timp/rk_timp/third-party/gtest/*' -o lcov.info
         lcov --remove lcov.info '/usr/include/*' -o lcov.info
         

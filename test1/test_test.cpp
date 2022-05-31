@@ -10,22 +10,13 @@ TEST( Tree, Empty){
 }
 
 TEST(Tree, element_right){
-  std::vector<int> vec_0 ={0,1};
+  std::vector<int> vec_0 ={1,0};
   std::vector<int> vec;
   Tree *tree =new Tree{};
   Right(1,tree);
   show(tree,vec);
   EXPECT_EQ(vec_0, vec);
 }
-TEST(Tree, element_left){
-  std::vector<int> vec_0 ={0,1};
-  std::vector<int> vec;
-  Tree *tree =new Tree{};
-  Left(0,tree);
-  show(tree,vec);
-  EXPECT_EQ(vec_0, vec);
-}
-
 
 
 TEST (Tree ,FullTree){

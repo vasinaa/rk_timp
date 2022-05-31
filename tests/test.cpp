@@ -16,32 +16,32 @@ TEST(Tree, element_right) {
     vector<int> out_expect = {1, 0};
     vector<int> out;
     Tree *tree = new Tree{};
-    addr(1, tree);
+    addRight(1, tree);
     show(tree, out);
     EXPECT_EQ(out_expect, out);
 }
 
 TEST(Tree, FullTree) {
     vector<int> out;
-    vector<int> out_expect = { 250, 42, 1226, 35,-87, 18,171, 56,-35, 48, 69};
+    vector<int> out_expect = { 204, 1037, 43, -43, 185, 12, 12, -1, 98, 543, 56};
 
 
-    Tree *tree = new Tree{26, nullptr, nullptr};
+    Tree *tree = new Tree{56, nullptr, nullptr};
 
-    addl(35, tree);
-    addr(38, tree);
+    addLeft(12, tree);
+    addRight(543, tree);
 
-    addl(-35, tree->right);
-    addr(69, tree->right);
+    addLeft(-1, tree->right);
+    addRight(98, tree->right);
 
-    addl(42, tree->left);
-    addr(18, tree->left);
+    addLeft(43, tree->left);
+    addRight(12, tree->left);
 
-    addl(-87, tree->left->right);
-    addr(171, tree->left->right);
+    addLeft(-43, tree->left->right);
+    addRight(185, tree->left->right);
 
-    addl(250, tree->left->left);
-    addr(1226, tree->left->left);
+    addLeft(204, tree->left->left);
+    addRight(1037, tree->left->left);
 
     show(tree, out);
     EXPECT_EQ(out_expect, out);

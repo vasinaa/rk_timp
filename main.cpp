@@ -10,25 +10,25 @@ struct Tree {
 };
 
 
-void pLeft(int value, Tree *pTree) {
+void addLeft(int value, Tree *pTree) {
     pTree->left = new Tree;
     pTree->left->value = value;
     pTree->left->parent = pTree;
 }
 
-void pRight(int value, Tree *pTree) {
+void addRight(int value, Tree *pTree) {
     pTree->right = new Tree;
     pTree->right->value = value;
     pTree->right->parent = pTree;
 }
 
 
-void show(Tree *tree, std::vector<int> &out) {
+void reverse(Tree *tree, std::vector<int> &out) {
     if (tree == nullptr) return;
 
-    show(tree->left, out);
+    reverse(tree->left, out);
 
-    show(tree->right, out);
+    reverse(tree->right, out);
     out.push_back(tree->value);
 
 

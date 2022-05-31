@@ -7,7 +7,7 @@ TEST(Tree, Empty) {
     vector<int> out_expect = {0};
     vector<int> out;
     Tree *tree = new Tree{};
-    reverse(tree, out);
+    show(tree, out);
     EXPECT_EQ(out_expect, out);
 }
 
@@ -16,34 +16,34 @@ TEST(Tree, element_right) {
     vector<int> out_expect = {1, 0};
     vector<int> out;
     Tree *tree = new Tree{};
-    addRight(1, tree);
-    reverse(tree, out);
+    addr(1, tree);
+    show(tree, out);
     EXPECT_EQ(out_expect, out);
 }
 
 TEST(Tree, FullTree) {
     vector<int> out;
-    vector<int> out_expect = { 204, 1037, 43, -43, 185, 12, 12, -1, 98, 543, 56};
+    vector<int> out_expect = { 150, 545, 41, -25, 125, 11, 12, -3, 81, 412, 56};
 
 
-    Tree *tree = new Tree{56, nullptr, nullptr};
+    Tree *tree = new Tree{26, nullptr, nullptr};
 
-    addLeft(12, tree);
-    addRight(543, tree);
+    addl(10, tree);
+    addr(412, tree);
 
-    addLeft(-1, tree->right);
-    addRight(98, tree->right);
+    addl(-3, tree->right);
+    addr(81, tree->right);
 
-    addLeft(43, tree->left);
-    addRight(12, tree->left);
+    addl(41, tree->left);
+    addr(11, tree->left);
 
-    addLeft(-43, tree->left->right);
-    addRight(185, tree->left->right);
+    addl(-25, tree->left->right);
+    addr(125, tree->left->right);
 
-    addLeft(204, tree->left->left);
-    addRight(1037, tree->left->left);
+    addl(150, tree->left->left);
+    addr(545, tree->left->left);
 
-    reverse(tree, out);
+    show(tree, out);
     EXPECT_EQ(out_expect, out);
 
 }

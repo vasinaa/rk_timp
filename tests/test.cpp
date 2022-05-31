@@ -1,4 +1,4 @@
-#include "../reverse.cpp"
+#include "../show.cpp"
 #include "gtest/gtest.h"
 
 using namespace std;
@@ -23,7 +23,7 @@ TEST(Tree, element_right) {
 
 TEST(Tree, FullTree) {
     vector<int> out;
-    vector<int> out_expect = { 150, 545, 41, -25, 125, 11, 12, -3, 81, 412, 56};
+    vector<int> out_expect = { 150, 545, 41, -25, 125, 11, 12, -3, 81, 412, 26};
 
 
     Tree *tree = new Tree{26, nullptr, nullptr};

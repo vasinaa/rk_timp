@@ -1,37 +1,32 @@
 #include <iostream>
 #include <random>
 
-
 struct Tree {
-    int value = 0;
-    struct Tree *parent = nullptr;
-    struct Tree *left = nullptr;
-    struct Tree *right = nullptr;
+  int ch=0;
+  struct Tree *k = nullptr;
+  struct Tree *left= nullptr;
+  struct Tree *right= nullptr;
 };
 
-
-void addLeft(int value, Tree *pTree) {
-    pTree->left = new Tree;
-    pTree->left->value = value;
-    pTree->left->parent = pTree;
+void Left (int ch, Tree *pp)
+{
+  pp->left =new Tree;
+  pp->left->ch =ch;
+  pp->left->k= pp;
 }
 
-void addRight(int value, Tree *pTree) {
-    pTree->right = new Tree;
-    pTree->right->value = value;
-    pTree->right->parent = pTree;
+void Right( int ch, Tree *pp)
+{
+  pp->right = new Tree;
+  pp->right->ch=ch;
+  pp->right->k=pp;
 }
 
-
-void reverse(Tree *tree, std::vector<int> &out) {
-    if (tree == nullptr) return;
-
-    reverse(tree->left, out);
-
-    reverse(tree->right, out);
-    out.push_back(tree->value);
-
-
+void show ( Tree *tree, std::vector<int> &vec)
+{
+  if (tree=nullptr) return;
+  show(tree->left,vec);
+  show (tree->right,vec);
+  vec.push_back(tree->ch);
 }
-
-
+  

@@ -10,13 +10,13 @@ struct Tree {
 };
 
 
-void addl(int value, Tree *pTree) {
+void addLeft(int value, Tree *pTree) {
     pTree->left = new Tree;
     pTree->left->value = value;
     pTree->left->parent = pTree;
 }
 
-void addr(int value, Tree *pTree) {
+void addRight(int value, Tree *pTree) {
     pTree->right = new Tree;
     pTree->right->value = value;
     pTree->right->parent = pTree;

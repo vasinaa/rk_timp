@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(RK2)
+project(rk_timp)
 
 set(CMAKE_CXX_STANDARD 14)
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest" "gtest")

@@ -40,15 +40,17 @@ jobs:
         mkdir artifacts && cd artifacts
         du ../test >> size.txt
         
+        
     - name: CovBeg
       uses: coverallsapp/github-action@master
       with:
           github-token: ${{ secrets.github_token }}
           path-to-lcov: ./_build/lcov.info
           coveralls-endpoint: https://coveralls.io
+  
           
     - name: artifacts
       uses: actions/upload-artifact@v3
       with:
         name: artifacts
-        path: /artifacts
+        path: _build/artifacts

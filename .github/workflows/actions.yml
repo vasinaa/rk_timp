@@ -33,7 +33,8 @@ jobs:
       
       run: |
         ./test
-        du test >> size.txt
+        mkdir artifacts && cd artifacts
+        du ../test >> size.txt
         lcov -c -t "show" -o lcov.info -d .
         lcov --remove lcov.info '/home/runner/work/rk_timp/rk_timp/third-party/gtest/*' -o lcov.info
         lcov --remove lcov.info '/usr/include/*' -o lcov.info
